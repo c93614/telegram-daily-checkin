@@ -44,8 +44,8 @@ jobs:
       #   env:
       #     TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
       #     TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
-      #     TELEGRAM_TO: ${{ vars.TELEGRAM_TO }}
-      #     TELEGRAM_MESSAGE: ${{ vars.TELEGRAM_MESSAGE }}
+      #     TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+      #     TELEGRAM_MESSAGE: ${{ secrets.TELEGRAM_MESSAGE }}
       #   uses: mxschmitt/action-tmate@v3
       #   # timeout-minutes: 30
 
