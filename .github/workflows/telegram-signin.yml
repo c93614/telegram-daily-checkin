@@ -32,9 +32,9 @@ jobs:
             echo "no artifact, skip"
           fi
     
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        # timeout-minutes: 30
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
+      #   # timeout-minutes: 30
 
       - name: Set up python
         uses: actions/setup-python@v5
