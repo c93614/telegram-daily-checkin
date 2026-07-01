@@ -4,8 +4,6 @@ from telethon import TelegramClient
 
 api_id = int(os.getenv('TELEGRAM_API_ID'))
 api_hash = os.getenv('TELEGRAM_API_HASH')
-bot_name = os.getenv('TELEGRAM_API_HASH')
-
 bot_name = os.getenv("TELEGRAM_TO")
 bot_message = os.getenv("TELEGRAM_MESSAGE")
 
