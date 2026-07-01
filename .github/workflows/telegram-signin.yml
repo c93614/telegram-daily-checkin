@@ -2,8 +2,8 @@ name: Telegram Daily Sign-in (Telethon)
 
 on:
   schedule:
-    - cron: '30 8 * * *'        # 每天北京时间 16:30（UTC 8:30）运行，可自行修改
-  workflow_dispatch:            # 允许手动触发测试
+    - cron: '30 8 * * *'
+  workflow_dispatch:
 
 jobs:
   signin:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: cli/cli-action@v2
+      # - uses: cli/cli-action@v2
 
       # - name: Download artifact
       #  uses: actions/download-artifact@v4
