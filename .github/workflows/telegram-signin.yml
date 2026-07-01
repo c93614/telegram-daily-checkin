@@ -1,4 +1,4 @@
-name: Telegram Daily Sign-in (Telethon)
+name: Telegram Daily Sign-in
 
 on:
   schedule:
@@ -17,6 +17,13 @@ jobs:
       #  uses: actions/download-artifact@v4
       #  with:
       #    name: session
+
+      # - name: Wait
+      #   uses: 1itachi/sleep-random@v1.0.0
+      #   with:
+      #     minutes: '5'
+      #     random: 'true'
+      
       - name: Try download artifact
         run: |
           if gh run download --name session 2>/dev/null; then
