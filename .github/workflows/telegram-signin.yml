@@ -1,0 +1,37 @@
+name: Telegram Daily Sign-in (Telethon)
+
+on:
+  schedule:
+    - cron: '30 8 * * *'        # 每天北京时间 16:30（UTC 8:30）运行，可自行修改
+  workflow_dispatch:            # 允许手动触发测试
+
+jobs:
+  signin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        # timeout-minutes: 30   # 可选，超时自动结束
+      
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 运行 Telethon 签到脚本
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_TO: ${{ vars.TELEGRAM_TO }}
+          TELEGRAM_MESSAGE: ${{ vars.TELEGRAM_MESSAGE }}
+        run: python main.py
